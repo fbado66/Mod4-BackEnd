@@ -1,5 +1,10 @@
 class ListingsController < ApplicationController
 
+    def index 
+        @listings = Listing.all 
+        render json: @listings
+    end 
+
     def create
         @listing = Listing.create!(listing_params)
         render json: @lising
