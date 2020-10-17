@@ -1,7 +1,7 @@
 class ListingCategoriesController < ApplicationController
 
     def create
-        @listing_category = LisitngCategory.create!(listing_category_params)
+        @listing_category = ListingCategory.create!(listing_category_params)
         render json: @listing_category
     end 
 
