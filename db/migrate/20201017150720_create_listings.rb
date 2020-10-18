@@ -6,6 +6,9 @@ class CreateListings < ActiveRecord::Migration[6.0]
       t.string :details
       t.string :image_1_url
       t.string :image_2_url
+      t.string :image_3_url
+      t.string :image_4_url
+      t.string :image_5_url
       t.integer :price
       t.string :description
       t.string :host_info
