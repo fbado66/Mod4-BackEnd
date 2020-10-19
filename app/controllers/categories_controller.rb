@@ -4,6 +4,11 @@ class CategoriesController < ApplicationController
         @categories = Category.all 
         render json: @categories
     end 
+
+    def show 
+        @category = Category.find(params[:id])
+        render json: @category
+    end 
     
     def create
         @category = Category.create!(category_params)
@@ -13,6 +18,6 @@ class CategoriesController < ApplicationController
     private
 
     def category_params
-        params.permit(:name)
+        params.permit(:title, :content, :image_url)
     end 
 end
