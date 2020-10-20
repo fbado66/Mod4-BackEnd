@@ -17,7 +17,7 @@ Review.destroy_all
 
 # --------------------------------------USER ------------------------------------------------------- 
 
-user_1 = User.create(first_name: 'Franklin', last_name: 'Bado', email: 'fbado66@gmail.com', phone: 347-781-2308, location: 'New York')
+user_1 = User.create(first_name: 'Franklin', last_name: 'Bado', email: 'fbado66@gmail.com', phone: 347-781-2308, location: 'New York', username: 'fbado', password: 'abc123')
 
 
 # -------------------Array for Images  -----------------------------------

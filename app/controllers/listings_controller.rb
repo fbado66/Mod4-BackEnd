@@ -5,6 +5,11 @@ class ListingsController < ApplicationController
         render json: @listings
     end 
 
+    def show 
+        @listing = Listing.find(params[:id])
+        render json: @listing
+    end 
+
     def create
         @listing = Listing.create!(listing_params)
         render json: @lising
