@@ -93,7 +93,7 @@ listing_18 = Listing.create(title: 'Pittsburgh, Pennsylvania, United States', ca
 
 # ------------------------------------RESERVATION -------------------------------------
 
-reservation_1 = Reservation.create(user_id: 1, listing_id: 1, check_in_date: '10/12/2020', check_out_date: '10/14/2020', guest_count: 2, message_to_host: 'Hello')
+reservation_1 = Reservation.create(user_id: 1, listing_id: 1, check_in_date: '2020/10/12', check_out_date: '2020/10/15', guest_count: 2, message_to_host: 'Hello')
 
 #  ------------------------------------ CATEGORIES ----------------------------------------------
 category_1 = Category.create(title: "Unique Stays", content: "Spaces that are more than just a place to sleep", image_url: "https://a0.muscache.com/im/pictures/15159c9c-9cf1-400e-b809-4e13f286fa38.jpg?im_w=480")
