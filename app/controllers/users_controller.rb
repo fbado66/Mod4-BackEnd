@@ -1,29 +1,51 @@
 class UsersController < ApplicationController
 
-    def index 
-        @users = User.all 
-        render json: @users
-    end 
-
-    def create 
-        @user = User.create!(user_params)
-        if @user.valid?
-            render json:@user 
-        else
-            render json: {error: "Invalid User"}
-        end 
-    end 
+    before_action :authorized, only: [:keep_logged_in]
 
 
-
-    def login 
+    def login
         @user = User.find_by(username: params[:username])
         if @user && @user.authenticate(params[:password])
-            render json: @user
+            user_tkn = encode_token({user_id: @user.id})
+
+            render json: {
+                user: UserSerializer.new(@user), 
+                token: user_tkn
+            }
+
         else
             render json: {error: "INCORRECT USERNAME OR PASSWORD"}, status: 422
         end
     end
+
+    # def index 
+    #     @users = User.all 
+    #     render json: @users
+    # end 
+
+    def create 
+        @user = User.create!(user_params)
+        if @user.valid?
+            user_tkn = encode_token({user_id: @user.id})
+            render json: {
+                user: UserSerializer.new(@user),
+                token: user_tkn
+        }
+        else
+            render json: {error: "Invalid User"}, status: 422
+        end 
+    end 
+
+
+    def keep_logged_in
+        user_tkn = encode_token({user_id: @user.id})
+
+        render json: {
+            user: UserSerializer.new(@user), 
+            token: user_tkn
+        }
+    end
+
 
     private
 
