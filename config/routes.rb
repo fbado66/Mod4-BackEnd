@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  # resources :reviews
+  resources :reviews
   # resources :listing_categories
   resources :categories
   # resources :reservations
-  # resources :listings
+  resources :listings
   # resources :users
 
   post '/users/login', to: "users#login"
