@@ -133,4 +133,4 @@ listing_category_18 = ListingCategory.create(listing_id: 18, category_id: 3)
 
 
 # --------------------------------------REVIEW--------------------------------------------
-review_1 = Review.create(listing_id: 1, user_id: 1, nickname: 'banana', content: 'Best place ever to scape reality')
+review_1 = Review.create(listing_id: 1, user_id: 1, nickname: 'banana', content: 'Best place ever to scape reality', likes: 2)

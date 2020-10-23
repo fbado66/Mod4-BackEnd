@@ -5,6 +5,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.belongs_to :user, null: false, foreign_key: true
       t.string :nickname
       t.string :content
+      t.integer :likes
 
       t.timestamps
     end

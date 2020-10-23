@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2020_10_17_151309) do
     t.bigint "user_id", null: false
     t.string "nickname"
     t.string "content"
+    t.integer "likes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["listing_id"], name: "index_reviews_on_listing_id"
